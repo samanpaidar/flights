@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Flights Registeration</h1>
+    <form action="income" method="post">
+    	<input type="text" name ="flightnumber" id="flightnumber" placeholder="Flightnumber" required/>
+    	<input type="text" name ="departure" id="departure" placeholder="Departure" required>
+    	<input type="text" name ="destination" id="destination" placeholder="Destination">
+    	<input type="date" name="departs" id="departs" placeholder="Departs"/>
+    	<input type="date" name="arrives" id="arrives" placeholder="Arrives" required />
+    	<input type="text" name ="totalplace" id="totalplace" placeholder="Totalplace"/ required>
+    	<input type="text" name ="aircraft" id="aircraft" placeholder="Aircraft"/ required><br>
+    	<button>Register</button>
+    </form>
+    <ul>
+
+        <% income.forEach(function(a) { %>
+        <P><li>Flights number:<%= a.flightnumber %></li>
+        <li>departure:<%= a.departure %></li>
+        <li>Destination:<%= a.destination %></li>
+        <li>Departs:<%= a.departs %></li>
+        <li>Arrives:<%= a.arrives %></li>
+        <li>Totalpalace:<%= a.totalplace %></li>
+        <li>Aircraft: <%= a.aircraft %></li></P>
+    
+        <% }); %>
+
+      </ul>
+
+
+  </body>
+</html>
