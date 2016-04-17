@@ -1,36 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="flightsystem">
   <head>
     <title></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Flights Registeration</h1>
-    <form action="income" method="post">
-    	<input type="text" name ="flightnumber" id="flightnumber" placeholder="Flightnumber" required/>
-    	<input type="text" name ="departure" id="departure" placeholder="Departure" required>
-    	<input type="text" name ="destination" id="destination" placeholder="Destination">
-    	<input type="date" name="departs" id="departs" placeholder="Departs"/>
-    	<input type="date" name="arrives" id="arrives" placeholder="Arrives" required />
-    	<input type="text" name ="totalplace" id="totalplace" placeholder="Totalplace"/ required>
-    	<input type="text" name ="aircraft" id="aircraft" placeholder="Aircraft"/ required><br>
-    	<button>Register</button>
-    </form>
-    <ul>
+    <div class="container" ng-controller="landvetter">
+        <h1>Flights Registeration</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                <form action="income" method="post">
+                	<th><input type="text" name ="flightnumber" id="flightnumber" placeholder="Flightnumber" required/></th>
+                	<th><input type="text" name ="departure" id="departure" placeholder="Departure" required></th>
+                	<th><input type="text" name ="destination" id="destination" placeholder="Destination"></th>
+                	<th><input type="date" name="departs" id="departs" placeholder="Departs"/></th>
+                	<th><input type="date" name="arrives" id="arrives" placeholder="Arrives" required /></th>
+                	<th><input type="text" name ="totalplace" id="totalplace" placeholder="Totalplace"/ required></th>
+                	<th><input type="text" name ="aircraft" id="aircraft" placeholder="Aircraft"/ required></th>
+                	<th><button>Register</button></th>
+                </form>
+                </tr>
+            </thead>
+        </table>
+        <ul>
 
-        <% income.forEach(function(a) { %>
-        <P><li>Flights number:<%= a.flightnumber %></li>
-        <li>departure:<%= a.departure %></li>
-        <li>Destination:<%= a.destination %></li>
-        <li>Departs:<%= a.departs %></li>
-        <li>Arrives:<%= a.arrives %></li>
-        <li>Totalpalace:<%= a.totalplace %></li>
-        <li>Aircraft: <%= a.aircraft %></li></P>
-    
-        <% }); %>
+            <% income.forEach(function(a) { %>
+            <P><li>Flights number:<%= a.flightnumber %></li>
+            <li>departure:<%= a.departure %></li>
+            <li>Destination:<%= a.destination %></li>
+            <li>Departs:<%= a.departs %></li>
+            <li>Arrives:<%= a.arrives %></li>
+            <li>Totalpalace:<%= a.totalplace %></li>
+            <li>Aircraft: <%= a.aircraft %></li></P>
+        
+            <% }); %>
 
-      </ul>
-
-
+          </ul>
+    </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+      <script src="/javascripts/controllers.js"></script>
   </body>
 </html>
